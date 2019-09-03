@@ -1,0 +1,546 @@
+<!-- updated ml -- 23/8-->
+
+
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Profile Page</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="{%  static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{%  static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+      <!-- Page Wrapper -->
+      <div id="wrapper">
+
+        <!-- Side bar, only present if the user has logged in -->
+            {% if request.user.is_authenticated %}
+              <!-- Sidebar -->
+                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+
+                  <!-- Sidebar - Brand -->
+                  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'main:Dash_board' %}">
+                      <!--
+                    <div class="sidebar-brand-icon rotate-n-15">
+                      <i class="fas fa-laugh-wink"></i>
+                    </div>
+                        -->
+                    <div class="sidebar-brand-text mx-3">Erudite Labs</div>
+                  </a>
+
+                          <!-- Divider -->
+                          <hr class="sidebar-divider my-0">
+
+                          <!-- Nav Item - Dashboard -->
+                          <li class="nav-item active">
+                            <a class="nav-link collapsed" href="{% url 'main:Dash_board' %}" data-toggle="collapse" data-target="#dashboarditems" aria-expanded="true" aria-controls="collapseUtilities">
+                              <i class="fas fa-fw fa-tachometer-alt"></i>
+                              <span>Dashboard</span></a>
+                            <div id="dashboarditems" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="utilities-color.html">Analysis</a>
+                                <a class="collapse-item" href="utilities-border.html">Transactions</a>
+                              </div>
+                            </div>
+
+
+                          </li>
+
+                          <!-- Divider -->
+                          <hr class="sidebar-divider">
+
+
+                          <!-- Heading -->
+                          <div class="sidebar-heading">
+                            Assets
+                          </div>
+
+                          <!-- Nav Item - Crypto Investments -->
+                          <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCrypto" aria-expanded="true" aria-controls="collapseTwo">
+                              <i class="fas fa-fw fa-chart-area"></i>
+                              <span>Crypto</span>
+                            </a>
+                            <div id="collapseCrypto" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="buttons.html">Current</a>
+                                  <a class="collapse-item" href="cards.html">Planned</a>
+                              </div>
+                            </div>
+                          </li>
+
+
+                            <!-- Nav Item - Crypto Investments -->
+                          <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStocks" aria-expanded="true" aria-controls="collapseTwo">
+                              <i class="fas fa-fw fa-chart-area"></i>
+                              <span>Stocks</span>
+                            </a>
+                            <div id="collapseStocks" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                <a class="collapse-item" href="buttons.html">Current</a>
+                                  <a class="collapse-item" href="cards.html">Planned</a>
+                              </div>
+                            </div>
+                          </li>
+
+                          <!-- Nav Item - Utilities Collapse Menu -->
+                          <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSettings" aria-expanded="true" aria-controls="collapseUtilities">
+                              <i class="fas fa-fw fa-wrench"></i>
+                              <span>Settings</span>
+                            </a>
+                            <div id="collapseSettings" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                <h6 class="collapse-header">Settings:</h6>
+                                <a class="collapse-item" href="utilities-color.html">Investments</a>
+                                <a class="collapse-item" href="utilities-border.html">Liquidation</a>
+                                <a class="collapse-item" href="utilities-animation.html">Strategies</a>
+                                <a class="collapse-item" href="utilities-other.html">Profile</a>
+                              </div>
+                            </div>
+                          </li>
+
+                          <!-- Divider -->
+                          <hr class="sidebar-divider">
+
+                          <!-- Heading -->
+                          <div class="sidebar-heading">
+                            Information
+                          </div>
+
+                        <!-- Nav Item - Strategies -->
+                          <li class="nav-item">
+                            <a class="nav-link" href="charts.html">
+                              <i class="fas fa-fw fa-table"></i>
+                              <span> Strategies </span></a>
+                          </li>
+
+                          <!-- Nav Item - About Us -->
+                          <li class="nav-item">
+                            <a class="nav-link" href="charts.html">
+                              <i class="fas fa-fw fa-folder"></i>
+                              <span>About Us</span>
+                            </a>
+                          </li>
+
+                          <!-- Nav Item - Contact Us -->
+                          <li class="nav-item">
+                            <a class="nav-link" href="charts.html">
+                              <i class="fas fa-fw fa-info-circle"></i>
+                              <span>Contact Us</span></a>
+                          </li>
+
+
+                          <!-- Divider -->
+                          <hr class="sidebar-divider d-none d-md-block">
+
+                          <!-- Sidebar Toggler (Sidebar) -->
+                          <div class="text-center d-none d-md-inline">
+                            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                          </div>
+
+
+
+
+
+                </ul>
+            {% else %}
+            {% endif %}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+          <!-- Main Content -->
+          <div id="content">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+
+
+
+                </button>
+
+                <!--this is what is shown when the user loggs in-->
+                {% if request.user.is_authenticated %}
+
+                    <!-- Erudite Labs Logo -->
+                    <div class="nav-item">
+                        <a href="#" class="btn-circle">
+                        <img class="img-fluid btn-sm" src="../../../media/img/erudite%20labs%20logo.PNG">
+                        </a>
+                    </div>
+
+
+
+
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                    </form>
+
+
+
+
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                      <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                      </a>
+                      <!-- Dropdown - Messages -->
+                      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                          <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </li>
+
+
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+                            <!-- this is how you request user info using details from django-->
+                          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{ request.user.username }}</b></span>
+                        <img class="img-profile rounded-circle" src="https://icon-library.net/images/person-image-icon/person-image-icon-7.jpg">
+                      </a>
+                      <!-- Dropdown - User Information -->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Settings
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Activity Log
+                        </a>
+                        <div class="dropdown-divider"></div>
+
+
+
+                          <!-- this is logour button, this redirects to the logout model -->
+                        <a class="dropdown-item" href="{% url 'accounts:log_out' %}" data-toggle="modal" data-target="#logoutModal">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                          Logout
+                        </a>
+
+
+                      </div>
+                    </li>
+
+                    </ul>
+
+
+
+
+            <!-- if the user is not logged in -->
+                {% else %}
+                    <!-- Eruditelabs Logo -->
+                    <div class="nav-item">
+                        <a href="#" class="btn-circle">
+                        <img class="img-fluid btn-sm" src="../../../media/img/erudite%20labs%20logo.PNG">
+                        </a>
+                    </div>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+
+                    <!-- Nav Item - About us and loggin in-->
+                    <li class="nav-item dropdown no-arrow">
+                      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Account</span>
+                        <img class="img-profile rounded-circle" src="https://icon-library.net/images/person-image-icon/person-image-icon-7.jpg">
+                      </a>
+                      <!-- Dropdown - UFor loggin in and registering -->
+                    <!-- defined for loggin in and creating a new account -->
+
+                        <!--ABOUT US-->
+                      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+
+
+                          <!--LOGIN JUST UPDATE THE HREF WILL WORK!-->
+                            <a class="dropdown-item" href="{% url 'accounts:log_in' %}">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Log In
+                            </a>
+
+                          <!--SIGNUP JUST UPDATE THE HREF WILL WORK!-->
+                            <a class="dropdown-item" href="{% url 'accounts:sign_up' %}">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Create an Account
+                            </a>
+
+                          <!--ABOUT US JUST UPDATE THE HREF WILL WORK!-->
+                            <a class="dropdown-item" href="#">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                            About us
+                            </a>
+
+
+
+                      </div>
+                    </li>
+
+                {% endif %}
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                          <div class="card border-0 shadow my-5 bg-frontpage-image">
+                              <div class="card-body p-5">
+
+                                  <!--
+                              <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
+                              <p class="lead">In this snippet, the background image is fixed to the body element. Content on the page will scroll, but the image will remain in a fixed position!</p>
+                              <p class="lead">Scroll down...</p>
+                                     -->
+                              <div style="height: 50vh"></div>
+                              </div>
+
+                          </div>
+
+            </div>
+
+
+            <!-- /.container-fluid -->
+
+          </div>
+          <!-- End of Main Content -->
+
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Erudite Labs</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+      </div>
+      <!-- End of Page Wrapper -->
+
+
+              <!-- Scroll to Top Button-->
+              <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+              </a>
+
+              <!-- Logout Modal-->
+              <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                      <a class="btn btn-primary" href="{% url 'accounts:log_out' %}">Logout</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{%  static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{%  static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{%  static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{%  static 'js/sb-admin-2.min.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- old page
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="An example of Django project with basic user functionality.">
+    <meta name="author" content="Yehor Smoliakov">
+
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <title>Simple Django Login and Registration</title>
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand" href="/">{% trans 'Home' %}</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:change_password' %}">{% trans 'Change password' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:change_profile' %}">{% trans 'Change profile' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:change_email' %}">{% trans 'Change email' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:log_out' %}">{% trans 'Log out' %}</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Log in' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Create an account' %}</a>
+                </li>
+            {% endif %}
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'change_language' %}">{% trans 'Change language' %}</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="container-fluid mt-3">
+
+    {% bootstrap_messages %}
+
+    {% block content %}
+        No content.
+    {% endblock %}
+
+</div>
+
+<script src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+</body>
+</html> -->
